@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/infinix/d5110
+LOCAL_PATH := device/alps/z6u030
 
 
 # Architecture
@@ -42,22 +42,26 @@ BOARD_KERNEL_CMDLINE += \
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS  := --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --tags_offset 0x0e000000 --board X510-D5110-L-20
-TARGET_PREBUILT_KERNEL := device/infinix/d5110/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := device/alps/z6u030/prebuilt/kernel
 
 # TARGET IMAGES
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # RECOVERY
-TARGET_RECOVERY_FSTAB := device/infinix/d5110/recovery/root/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/alps/z6u030/recovery/root/twrp.fstab
 
 # PARTTIONS
 # We need the partitions size in decimal
 # Use cat proc/partitions via adb, then block size * 1024
-# This is the partitions of Infinix ROM, system size is bigger than Android One ROM
+# 'Tis typical for counterfeit/clone devices to come with a hacked framework
+# that is so coded to report a different ROM capacity than what's actually there.
+#
+# Apparently the userdata partition is set at ~5GB, and system at 1.3GB
+# Change these in case you want to port this to your clone or white-box phone.
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2634022912
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12538347520
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1367343104
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 5737283584
 # For the following line, do KERNEL_PAGE_SIZE * 64 (Most of time it is 2048 * 64)
 BOARD_FLASH_BLOCK_SIZE := 131072
 
@@ -68,11 +72,14 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
 TW_MAX_BRIGHTNESS := 255
-TW_EXCLUDE_SUPERSU := true
 TW_INCLUDE_FB2PNG := true
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TW_REBOOT_BOOTLOADER := true
 TW_REBOOT_RECOVERY := true
 TW_HAS_DOWNLOAD_MODE := true
-TW_EXCLUDE_SUPERSU := true
+TW_EXCLUDE_SUPERSU := false
 TW_USE_TOOLBOX := true
+
+# Device-specific stuff - the clone I am working on has a flipped framebuffer
+# This basically forced me to download BBQLinux and git these source files :P
+BOARD_HAS_FLIPPED_SCREEN := true

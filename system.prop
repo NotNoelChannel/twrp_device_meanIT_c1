@@ -59,7 +59,7 @@ ro.boot.selinux=disable
 debug.hwui.render_dirty_regions=false
 
 ro.mediatek.chip_ver=S01
-ro.mediatek.version.release=ALPS.L1.MP6.A1SP.V1.4_RGK6580.A1WE.A.L
+ro.mediatek.version.release=ALPS.L1.MP6.V2_GXQ6580.WEG.L_P69
 ro.mediatek.platform=MT6580
 ro.mediatek.version.sdk=4
 ro.telephony.sim.count=2
