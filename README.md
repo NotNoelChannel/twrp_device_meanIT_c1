@@ -10,7 +10,7 @@ Copy the contents of this repo in `/your_source_folder_here/device/alps/z6u030`,
 If all goes well, you should end up with a freshly-cooked recovery.img in `/out/product/z6u030`.
 
 ## Issues/Caveats
-* Recent versions of SuperSU may fail to install with a "BAD RECOVERY DETECTED" error, c.f. https://github.com/TeamWin/Team-Win-Recovery-Project/issues/367 - not much I could do so far with that one; I did however include a SuperSU installer in the image as a workaround.
+* Recent versions of SuperSU may fail to install with a "BAD RECOVERY DETECTED" error, c.f. https://github.com/TeamWin/Team-Win-Recovery-Project/issues/367 - not much I could do so far with that one; I did however include a SuperSU installer in the image as a workaround. Alternatively you may try phh's Superuser utility, owing to issues with SuperSU being closed-source and all...
 
 ## Downloads
-You may download the initial recovery release here: http://d-h.st/P6H4
+You may download the initial recovery releases for v105 and v107 here: https://github.com/huckleberrypie/android_device_alps_z6u030/releases
