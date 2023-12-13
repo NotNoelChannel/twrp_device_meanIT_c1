@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/meanIT/C1
+LOCAL_PATH := device/meanIT/c1
 
 
 # Architecture
