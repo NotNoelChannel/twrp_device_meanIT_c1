@@ -17,6 +17,12 @@
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-$(call inherit-product, device/meanIT/C1/full_c1.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := c1
 PRODUCT_NAME := omni_c1
+PRODUCT_BRAND := meanIT
+PRODUCT_MODEL := c1_meanIT
+PRODUCT_MANUFACTURER := meanIT
