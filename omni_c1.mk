@@ -21,8 +21,8 @@ $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := omni_c1
+PRODUCT_DEVICE := c1
 PRODUCT_NAME := omni_c1
 PRODUCT_BRAND := meanIT
-PRODUCT_MODEL := c1_meanIT
+PRODUCT_MODEL := Intelkom C1
 PRODUCT_MANUFACTURER := meanIT
