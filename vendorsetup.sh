@@ -1,2 +1,2 @@
-add_lunch_combo omni_z6u030-eng
-add_lunch_combo omni_z6u030-userdebug
+add_lunch_combo omni_c1-eng
+add_lunch_combo omni_c1-userdebug

@@ -1,13 +1,9 @@
-#
-# Imported from build.prop
-#
-rild.libpath=/system/lib/mtk-ril.so
+rild.libpath=mtk-ril.so
 rild.libargs=-d /dev/ttyC0
 
 
 # MTK, Infinity, 20090720 {
 wifi.interface=wlan0
-ro.hardware=mt6580
 # MTK, Infinity, 20090720 }
 
 # MTK, mtk03034, 20101210 {
@@ -25,12 +21,10 @@ mediatek.wlan.ctia=0
 #
 wifi.tethering.interface=ap0
 #
-ro.sf.lcd_density=320
-ro.opengles.version=131072
 
 wifi.direct.interface=p2p0
-dalvik.vm.heapgrowthlimit=96m
-dalvik.vm.heapsize=128m
+#dalvik.vm.heapgrowthlimit=128m
+#dalvik.vm.heapsize=256m
 
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
@@ -38,10 +32,13 @@ ro.sys.usb.mtp.whql.enable=0
 # Power off opt in IPO
 sys.ipo.pwrdncap=2
 
-ro.sys.usb.storage.type=mtp,adb
+ro.sys.usb.storage.type=mtp
 
 # USB BICR function
-ro.sys.usb.bicr=yes
+ro.sys.usb.bicr=no
+
+#Default standard switch motor pictures
+persist.sys.bootanimation=0
 
 # USB Charge only function
 ro.sys.usb.charging.only=yes
@@ -52,30 +49,23 @@ ro.audio.silent=0
 
 ro.zygote.preload.enable=0
 
+# temporary enables NAV bar (soft keys)
+qemu.hw.mainkeys=1
+
 ro.kernel.zio=38,108,105,16
+#ro.kernel.qemu=0
+#ro.kernel.qemu.gles=0
+ro.opengles.version=131072
 ro.boot.selinux=disable
 
 # Disable dirty region for Mali
 debug.hwui.render_dirty_regions=false
+persist.sys.timezone = Europe/Amsterdam
+ro.sf.lcd_density=240
+ro.config.ringtone=Impress.ogg
+ro.config.ringtone_sim2=Impress.ogg
+persist.operator.optr=CUST
 
-ro.mediatek.chip_ver=S01
-ro.mediatek.version.release=ALPS.L1.MP6.V2_GXQ6580.WEG.L_P69
-ro.mediatek.platform=MT6580
-ro.mediatek.version.sdk=4
-ro.telephony.sim.count=2
-persist.radio.default.sim=0
-persist.radio.multisim.config=dsds
-ro.telephony.default_network=0,1
-ril.first.md=1
-ril.flightmode.poweroffMD=1
-ril.telephony.mode=0
-persist.mtk.wcn.combo.chipid=-1
-ril.specific.sm_cause=0
-bgw.current3gband=0
-ril.external.md=0
-ro.sf.hwrotation=0
-ril.current.share_modem=2
-ril.radiooff.poweroffMD=0
-
-ro.telephony.ril_class=MediaTekRIL
-ro.telephony.ril.config=fakeiccid
+ro.winani.scale=1
+ro.transani.scale=1
+ro.anidura.scale=1
